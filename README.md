@@ -6,6 +6,14 @@
 
 ---
 
+## 🌐 Live Demo & Akses Aplikasi
+Aplikasi ini telah di-deploy dan dapat diakses secara langsung melalui tautan berikut:
+**👉 [MASUKKAN_LINK_DOMAIN_KAMU_DI_SINI]**
+
+*(Catatan: Silakan gunakan link di atas untuk mencoba fitur aplikasi secara langsung tanpa perlu instalasi).*
+
+---
+
 ## 📌 Tentang Proyek
 **NetKids** adalah sebuah platform utilitas edukasi yang dirancang khusus untuk anak Sekolah Dasar (SD). Aplikasi ini bertujuan untuk mengubah anak-anak dari "konsumen pasif" menjadi pemecah masalah (*problem solver*) melalui penerapan **Computational Thinking (Zero Syntax Coding)** dan literasi keamanan digital dasar.
 
@@ -26,8 +34,10 @@ Alih-alih mengajarkan anak mengetik kode pemrograman yang rumit, NetKids melatih
   - Validasi Input & **CSRF Token** protection.
   - Sanitasi Output menggunakan `htmlspecialchars()` (Anti XSS).
 
-## 💻 Cara Instalasi & Menjalankan (Localhost / XAMPP)
-Bagi dewan juri atau penguji yang ingin menjalankan proyek ini secara lokal, ikuti langkah berikut:
+---
+
+## 💻 Pengujian Kode Secara Lokal (Untuk Dewan Juri)
+Bagi dewan juri pemeriksa kode (Code Reviewer) yang ingin menguji *source code* ini secara lokal melalui XAMPP/Laragon, silakan ikuti langkah berikut:
 
 1. **Clone Repository:**
    
