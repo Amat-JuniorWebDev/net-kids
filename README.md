@@ -39,7 +39,17 @@ Alih-alih mengajarkan anak mengetik kode pemrograman yang rumit, NetKids melatih
 ## 💻 Pengujian Kode Secara Lokal (Untuk Dewan Juri)
 Bagi dewan juri pemeriksa kode (Code Reviewer) yang ingin menguji *source code* ini secara lokal melalui XAMPP/Laragon, silakan ikuti langkah berikut:
 
-1. **Clone Repository:**
-   
+### 1. Clone Repository
+Buka terminal atau command prompt, lalu jalankan perintah berikut:
 ```bash
-   git clone [https://github.com/Amat-JuniorWebDev/net-kids.git](https://github.com/Amat-JuniorWebDev/net-kids.git)
+git clone [https://github.com/Amat-JuniorWebDev/net-kids.git](https://github.com/Amat-JuniorWebDev/net-kids.git)
+
+### 2. Konfigurasi Database
+* Pastikan Apache dan MySQL sudah berjalan di XAMPP/Laragon Anda.
+* Buka phpMyAdmin melalui browser di `http://localhost/phpmyadmin`.
+* Buat database baru dengan nama `db_netkids`.
+* Import file `db_netkids.sql` (tersedia di dalam folder utama proyek ini) ke dalam database yang baru dibuat.
+
+### 3. Menjalankan Aplikasi
+* Pastikan folder `net-kids` sudah berada di dalam direktori server lokal Anda (folder `htdocs` untuk XAMPP atau folder `www` untuk Laragon).
+* Buka browser dan akses aplikasi melalui URL berikut: `http://localhost/net-kids`
