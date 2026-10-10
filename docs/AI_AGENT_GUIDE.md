@@ -35,22 +35,39 @@ Sistem ini melayani dua jenis pengguna dengan antarmuka dan hak akses yang sanga
 
 Struktur proyek wajib mematuhi pemisahan (*separation of concerns*) berikut untuk menghindari *spaghetti code*:
 
-```text
 net-kids/
-├── assets/                 # Gambar (.png/.svg), CSS custom, JS spesifik
+├── assets/                 # Folder Aset Statis
+│   ├── css/
+│   │   ├── style.css       # CSS Global (untuk Header, Footer, Landing Page)
+│   │   └── pages/          # CSS Modular terpisah khusus tiap bagian
+│   │       ├── anak/
+│   │       ├── auth/       # cth: login_anak.css
+│   │       ├── guru/
+│   │       └── ortu/
+│   ├── js/
+│   │   └── pages/          # JS Modular terpisah khusus tiap bagian
+│   │       ├── anak/
+│   │       ├── auth/       # cth: login_anak.js
+│   │       ├── guru/
+│   │       └── ortu/
+│   └── img/                # Gambar, SVG, icon, dan Animasi Lottie (security-animasi.json)
 ├── config/                 # Inti sistem
 │   ├── database.php        # Koneksi PDO (Singleton/Procedural)
 │   └── security.php        # Fungsi validasi input & CSRF generator
 ├── components/             # Bagian UI yang di-include (DRY principle)
-│   ├── header.php          # <head>, Tailwind CDN, Navigasi
-│   ├── footer.php          # Penutup body, JS global
+│   ├── header.php          # <head>, Navigasi, pemanggilan CSS
+│   ├── footer.php          # Penutup body, informasi hak cipta
 │   └── alert.php           # Template flash message (Sukses/Error)
 ├── pages/                  # Lapisan Presentasi (UI/HTML)
-│   ├── auth/               # login.php, register.php, logout.php
+│   ├── auth/               # login_anak.php, login_guru.php, register.php
 │   ├── anak/               # jurnal.php, brankas.php, jejak.php
+│   ├── guru/               # (Folder baru) Halaman pantauan & dashboard guru
 │   └── ortu/               # dashboard.php, pantau_anak.php
-├── actions/                # Lapisan Logika Bisnis (Proses Form/CRUD, Tanpa HTML)
-│   ├── auth_process.php    
-│   └── task_process.php    
-├── AI_AGENT_DOCS.md        # Dokumen PRD ini
+├── actions/                # Lapisan Logika Bisnis (Backend PHP)
+│   └── pages/              # Pemrosesan data yang dibuat modular
+│       ├── anak/
+│       ├── auth/           # cth: login_anak_process.php
+│       ├── guru/
+│       └── ortu/
+├── AI_AGENT_DOCS.md        # Dokumen PRD ini (silakan di-update dengan struktur ini)
 └── index.php               # Halaman Pendaratan (Landing Page)
