@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- Link ke Native CSS kita -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo filemtime('assets/css/style.css'); ?>">
 </head>
 <body>
     <!-- Decorative Ambient Orbs -->
@@ -32,7 +32,7 @@
                 <a class="nav-item" href="#orangtua">Untuk Orang Tua</a>
             </nav>
             <div class="header-actions">
-                <a aria-label="Masuk ke Akun NetKids" class="btn-login" href="pages/auth/login.php">
+                <a aria-label="Masuk ke Akun NetKids" class="btn-login" href="pages/auth/login_anak.php">
                     <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18">
                         <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
                         <polyline points="10 17 15 12 10 7"></polyline>
