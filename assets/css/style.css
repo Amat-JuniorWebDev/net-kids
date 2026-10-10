@@ -67,40 +67,100 @@ header.site-header {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1.5px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-pill);
-  padding: 0.85rem 1.75rem;
+  padding: 0.6rem 1.25rem;
   box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; /* DITAMBAHKAN: Agar menu bisa di-center secara absolut */
 }
 
-.brand-logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
-.logo-badge { width: 44px; height: 44px; background: linear-gradient(135deg, #f97316, #fb923c); color: #ffffff; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35); }
-.brand-title { font-family: var(--font-heading); font-size: 1.55rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.5px; }
+.brand-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; transition: transform 0.2s; }
+.brand-logo:hover .logo-badge { transform: scale(1.05); }
+
+/* Ukuran logo disesuaikan dengan proporsi baru (36x36px) */
+.logo-badge { 
+  width: 36px; 
+  height: 36px; 
+  background: linear-gradient(135deg, #f97316, #f59e0b); 
+  color: #ffffff; 
+  border-radius: 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: var(--font-heading); 
+  font-size: 1.15rem; 
+  font-weight: 800; 
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25); 
+  transition: transform 0.2s;
+}
+
+/* Ukuran teks logo sedikit dikecilkan */
+.brand-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.5px; }
 .brand-title span { color: var(--color-orange); }
 
-nav.nav-links { display: flex; align-items: center; gap: 2rem; }
-.nav-item { text-decoration: none; font-weight: 700; color: var(--color-slate-muted); font-size: 0.95rem; transition: color 0.2s ease; }
-.nav-item:hover, .nav-item.active { color: var(--color-purple); }
+nav.nav-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 1.75rem; 
+  /* DITAMBAHKAN: Teknik jitu agar menu terkunci tepat di tengah layar */
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
 
-.btn-login {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+.nav-item { text-decoration: none; font-weight: 700; color: var(--color-slate-muted); font-size: 0.9rem; transition: color 0.2s ease; }
+.nav-item:hover, .nav-item.active { color: var(--color-orange); }
+
+/* Tombol CTA Baru */
+.header-actions { display: flex; align-items: center; gap: 0.6rem; }
+
+/* Tombol Masuk (Ghost/Border) */
+.btn-login-ghost {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-slate-muted);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+.btn-login-ghost:hover {
+  color: var(--color-navy);
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+/* Tombol Daftar (Primary Gradient) */
+.btn-register-primary {
+  background: linear-gradient(to right, #f97316, #f59e0b);
   color: #ffffff;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  padding: 0.65rem 1.65rem;
+  padding: 0.45rem 1.25rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 4px 14px 0 rgba(255, 138, 0, 0.35);
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  transition: all 0.25s ease;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
 }
-.btn-login:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, 0.32); }
+.btn-register-primary:hover {
+  background: linear-gradient(to right, #ea580c, #d97706);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px 0 rgba(255, 138, 0, 0.45);
+}
 
 /* Main Content & Hero */
 main.main-content { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 5rem 1.5rem; }
